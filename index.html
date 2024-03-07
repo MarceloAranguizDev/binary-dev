@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilos/estilos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <title>Binary Dev</title>
+        <link rel="shortcut icon" href="recursos/logo.png">
+    </head>
+    <body>
+        
+        <header>
+            <img src="recursos/logo.png" alt="logo binary dev" class="brand"/>
+            <div class="menu-btn"></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="#home">Inicio</a>
+                    <a href="#">Proyectos</a>
+                    <a href="#">Servicios</a>
+                    <a href="#">Contacto</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="home">
+            <video class="video-slide active" src="./recursos/inicio.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="./recursos/proyectos.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="./recursos/servicios.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="./recursos/contacto.mp4" autoplay muted loop></video>
+
+            <div class="content active">
+                <h1>Desarrollo<br>Software</h1>
+                <p><strong>BINARY DEV</strong> es una empresa de desarrollo de software.
+                    <br>
+                    <br>
+                    Requieren de un sitio web que le permita
+                    posicionarse en linea y de esta forma le permita ser
+                    encontrada por sus potenciales clientes y usuarios.
+                    Asi como tambien utilizar este sitio para entregar
+                    informacion detallada sobre los productos y
+                    servicios que ofrece esta empresa asi como
+                    mantener a los clientes informados acerca de
+                    novedades o actualizaciones.
+                    Asi como tambien facilitar la comunicacion con sus
+                    clientes y usuarios a traves de un link de contacto y
+                    acceso a las redes sociales de la empresa.</p>
+                <a href="#">Leer más</a>
+            </div>
+            <div class="content">
+                <h1>Proyectos<br>Creados</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur 
+                    adipisicing elit. Pariatur quas, soluta 
+                    nisi totam consequuntur harum voluptatibus 
+                    explicabo est? Vero sequi aut nulla libero 
+                    cupiditate ullam aliquam suscipit autem 
+                    deleniti similique?</p>
+                <a href="#">Leer más</a>
+            </div>
+            <div class="content">
+                <h1>Servicios<br>Brindados</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur 
+                    adipisicing elit. Pariatur quas, soluta 
+                    nisi totam consequuntur harum voluptatibus 
+                    explicabo est? Vero sequi aut nulla libero 
+                    cupiditate ullam aliquam suscipit autem 
+                    deleniti similique?</p>
+                <a href="#">Leer más</a>
+            </div>
+            <div class="content">
+                <h1>Contacta<br>Con nosotros</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur 
+                    adipisicing elit. Pariatur quas, soluta 
+                    nisi totam consequuntur harum voluptatibus 
+                    explicabo est? Vero sequi aut nulla libero 
+                    cupiditate ullam aliquam suscipit autem 
+                    deleniti similique?</p>
+                <a href="#">Leer más</a>
+            </div>
+            <div class="media-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="slider-navigation">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+
+        </section>
+
+        <script type="text/javascript">
+            //Javascript para menu de navegación responsivo
+            const menuBtn = document.querySelector(".menu-btn")
+            const navigation = document.querySelector(".navigation")
+            menuBtn.addEventListener("click", () => {
+                menuBtn.classList.toggle("active");
+                navigation.classList.toggle("active");
+            });
+
+            //Javascript para slider de navegación responsivo
+            const btns = document.querySelectorAll(".nav-btn");
+            const slides = document.querySelectorAll(".video-slide");
+            const contents = document.querySelectorAll(".content")
+
+            var sliderNav = function(manual) {
+
+                btns.forEach((btn) => {
+                    btn.classList.remove("active");
+                });
+
+                slides.forEach((slide) => {
+                    slide.classList.remove("active");
+                });
+
+                contents.forEach((content) => {
+                    content.classList.remove("active");
+                });
+
+                btns[manual].classList.add("active");
+                slides[manual].classList.add("active");
+                contents[manual].classList.add("active");
+            }
+
+            btns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    sliderNav(i);
+                });
+            })
+        </script>
+    </body>
+</html>
